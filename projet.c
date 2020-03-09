@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <math.h>
 #include "rdtsc.h"
 
 #define NB_SAMPLE 20
@@ -35,6 +36,20 @@ double mean(unsigned n, unsigned t[n]){
     }
     return total/(double)n;
 }
+double stddev(unsigned n,unsigned t[n]){
+  double d = 0.0;
+  double m = mean(n,t);
+  unsigned i;
+
+  //
+  for (i=0; i<n; i++)
+    d+=(t[i]-m)*(t[i]-m);
+
+  d/=(double)(n-1);
+  
+  return sqrt(d); 
+}
+
 
 int main(){
     srand(0);
@@ -68,12 +83,11 @@ int main(){
         
     mea = mean(NB_SAMPLE, cycles);
   
-
-    fprintf(stderr, "\n %u; %f; %f; %f; %f;\n",n,min,max,avg,mea);
+    dev = stddev(NB_SAMPLE, cycles);
+    bpc = n / mea;
     
-    //dev = stddev(NB_SAMPLE, cycles);
-    //bpc = size / mea;
-
-    //fprintf(stderr, "\n%20llu; %15.3lf; %15.3lf; %15.3lf; %15.3lf; %15.3lf; %15.3lf %%;\n",(n,min,max,avg,mea,bpc,(dev * 100.0 / mea));
+    fprintf(stderr, "\n     n;             min;             max;             avg;             mea;             bpc;             dev;");
+    fprintf(stderr, "\n %5u; %15.3f; %15.3f; %15.3f; %15.3f; %15.3f; %15.3f;\n",n,min,max,avg,mea,bpc,(dev*100.0/mea));
     
+
 }
