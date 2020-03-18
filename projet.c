@@ -4,7 +4,7 @@
 #include <math.h>
 #include "rdtsc.h"
 
-#define NB_SAMPLE 20
+#define NB_SAMPLE 50
 
 void baseline(unsigned n, double a[n], unsigned ind[n], double b[n], double c[n][n]){
     unsigned i,j;
@@ -84,8 +84,8 @@ int main(int argc, char **argv){
 	double a[n_max], b[n_max], c[n_max][n_max];
     unsigned ind[n_max];
 
-	printf("ok\n");
-    fprintf(fichier, "    n;             min;             max;             avg;             mea;             bpc;             dev;\n");
+	//fprintf(fichier, "    n;             moy;\n");
+    //fprintf(fichier, "    n;             min;             max;             avg;             mea;             bpc;             dev;\n");
 
     for(n=n_ini;n<n_max+1;n=n+pas){
 
@@ -115,8 +115,8 @@ int main(int argc, char **argv){
         //dev = stddev(NB_SAMPLE, cycles);
         //bpc = n / mea;
 
-
-        fprintf(fichier, "%5u; %15.3f; %15.3f; %15.3f; %15.3f; %15.3f; %15.3f;\n",n,min,max,avg,mea,bpc,(dev*100.0/mea));
+		fprintf(fichier,"%5u; %15.3f;\n",n,mea);
+        //fprintf(fichier, "%5u; %15.3f; %15.3f; %15.3f; %15.3f; %15.3f; %15.3f;\n",n,min,max,avg,mea,bpc,(dev*100.0/mea));
     }
 
     fclose(fichier);
