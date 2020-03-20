@@ -13,8 +13,8 @@ Questions :
 >Calcul du temps de warmup => visé 0,5s (bientôt implémenté dans le projet2.c)
 
 2)
-Pour le rapport Global : (Axel plutot chaud pour faire cette section
-**********************
+Pour le rapport Global et Rapport Individuel :
+*********************************************
   a)Regarder les résultat dans la section loop , double clic sur baseline
   b)Regarder les différents taux de vectorization => indique que le code n'est pas vectoriser par exemple
   c)Regarder le code assembleur  pour comparer
