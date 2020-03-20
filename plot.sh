@@ -1,1 +1,1 @@
-gnuplot -c "plot_inv.gp" > "plot.png"
+gnuplot -c "plot_inv.gp" > "$1"
