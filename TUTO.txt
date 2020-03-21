@@ -52,7 +52,8 @@ faire un chmod +x perf.sh
 puis lancer le script : perf.sh 380 100 30
 par exemple pour size = 380; nbr de warmup = 100 et nbr de repetitions = 30
 génère le fichier maqao projet, projeticc
-génère la courbe warmup de projet
+génère la courbe warmup de projet et de projeticc
+
 
 
 

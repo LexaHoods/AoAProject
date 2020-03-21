@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "rdtsc.h"
-
+#include <time.h>
 #define NB_METAS 31
 
 void baseline(unsigned n, double* a, unsigned *ind, double* b, double ** c){
@@ -35,6 +35,9 @@ int main (int argc, char *argv[]) {
 		abort();
 	}
 
+	float temps;
+  clock_t t1, t2;
+
 	int i, m;
 	FILE* fichier = fopen("perf.csv", "w");
 
@@ -59,6 +62,7 @@ int main (int argc, char *argv[]) {
 		init_tab(size,a,ind,b,c);
 
 		/* warmup (repw repetitions in first meta, 1 repet in next metas) */
+		t1 = clock();
 		if (m == 0) {
 			for (i=0; i<repw; i++){
 				baseline(size,a,ind,b,c);
@@ -66,7 +70,9 @@ int main (int argc, char *argv[]) {
 		} else {
 			baseline(size,a,ind,b,c);
 		}
-
+		t2 = clock();
+		temps = (float)(t2-t1)/CLOCKS_PER_SEC;
+    printf("temps = %f\n", temps);
 		/* measure repm repetitions */
 		uint64_t t1 = rdtsc();
 		for (i=0; i<repm; i++){
