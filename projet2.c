@@ -72,7 +72,7 @@ int main (int argc, char *argv[]) {
 		}
 		t2 = clock();
 		temps = (float)(t2-t1)/CLOCKS_PER_SEC;
-    printf("temps = %f\n", temps);
+  	printf("temps = %f\n", temps);
 		/* measure repm repetitions */
 		uint64_t t1 = rdtsc();
 		for (i=0; i<repm; i++){

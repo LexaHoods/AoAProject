@@ -93,3 +93,11 @@ Commandes pour mesurer correctement la performance du programme :
      sudo likwid-perfctr -g L3 taskset -c 1 ./projet 300 100 30
 
      (Par exemple pour L3)
+
+
+Warmup : 
+
+perf optimal dès la première meta repetition 
+
+Nbr de répétition : à varier pour que ce soit plus stable !
+
