@@ -1,0 +1,481 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) C Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.0.166 Build 20191121
+
+Compiler options: -qopt-report=3
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: main(int, char **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (main(int, char **)) [1] projet2.c(31,35)
+  -> EXTERN: (34,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (35,3) abort(void)
+  -> EXTERN: (42,18) fopen(const char *__restrict__, const char *__restrict__)
+  -> INLINE (MANUAL): (45,13) atoi(const char *)
+    -> EXTERN: /usr/include/stdlib.h:(363,16) strtol(const char *__restrict__, char **__restrict__, int)
+  -> INLINE (MANUAL): (46,13) atoi(const char *)
+    -> EXTERN: /usr/include/stdlib.h:(363,16) strtol(const char *__restrict__, char **__restrict__, int)
+  -> INLINE (MANUAL): (47,13) atoi(const char *)
+    -> EXTERN: /usr/include/stdlib.h:(363,16) strtol(const char *__restrict__, char **__restrict__, int)
+  -> EXTERN: (51,31) malloc(size_t)
+  -> EXTERN: (52,25) malloc(size_t)
+  -> EXTERN: (53,25) malloc(size_t)
+  -> EXTERN: (54,27) malloc(size_t)
+  -> EXTERN: (57,22) malloc(size_t)
+  -> EXTERN: (61,3) srand(unsigned int)
+  -> INLINE: (62,3) init_tab(unsigned int, double *, unsigned int *, double *, double **)
+    -> EXTERN: (21,8) rand(void)
+    -> EXTERN: (22,10) rand(void)
+    -> EXTERN: (23,8) rand(void)
+  -> EXTERN: (65,8) clock(void)
+  -> INLINE: (68,5) baseline(unsigned int, double *, unsigned int *, double *, double **)
+  -> INLINE: (71,4) baseline(unsigned int, double *, unsigned int *, double *, double **)
+  -> EXTERN: (73,8) clock(void)
+  -> INLINE (MANUAL): (77,17) rdtsc()
+  -> INLINE: (79,4) baseline(unsigned int, double *, unsigned int *, double *, double **)
+  -> INLINE (MANUAL): (81,17) rdtsc()
+  -> EXTERN: (84,3) fprintf(FILE *__restrict__, const char *__restrict__, ...)
+  -> EXTERN: (90,3) free(void *)
+  -> EXTERN: (91,3) free(void *)
+  -> EXTERN: (92,3) free(void *)
+  -> EXTERN: (94,4) free(void *)
+  -> EXTERN: (96,3) free(void *)
+  -> EXTERN: (98,2) fclose(FILE *)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at projet2.c(56,3)
+   remark #15527: loop was not vectorized: function call to malloc(size_t) cannot be vectorized   [ projet2.c(57,22) ]
+LOOP END
+
+LOOP BEGIN at projet2.c(20,2) inlined into projet2.c(62,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at projet2.c(24,3) inlined into projet2.c(62,3)
+      remark #25408: memset generated
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at projet2.c(24,3) inlined into projet2.c(62,3)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at projet2.c(24,3) inlined into projet2.c(62,3)
+      <Remainder loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=12
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at projet2.c(11,3) inlined into projet2.c(68,5)
+   remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 3 1 2 )
+   remark #15542: loop was not vectorized: inner loop was already vectorized   [ projet2.c(11,3) ]
+
+   LOOP BEGIN at projet2.c(67,4)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(68,5)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=1
+      LOOP END
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(68,5)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 34 
+         remark #15477: vector cost: 21.000 
+         remark #15478: estimated potential speedup: 1.600 
+         remark #15486: divides: 1 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(68,5)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 34 
+         remark #15477: vector cost: 21.000 
+         remark #15478: estimated potential speedup: 1.600 
+         remark #15486: divides: 1 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(68,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at projet2.c(11,3) inlined into projet2.c(71,4)
+   remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
+   remark #15542: loop was not vectorized: inner loop was already vectorized   [ projet2.c(11,3) ]
+
+   LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(71,4)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(71,4)
+      remark #15301: PERMUTED LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 34 
+      remark #15477: vector cost: 21.000 
+      remark #15478: estimated potential speedup: 1.600 
+      remark #15486: divides: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(71,4)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 34 
+      remark #15477: vector cost: 21.000 
+      remark #15478: estimated potential speedup: 1.600 
+      remark #15486: divides: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(71,4)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at projet2.c(11,3) inlined into projet2.c(79,4)
+   remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 3 1 2 )
+   remark #15542: loop was not vectorized: inner loop was already vectorized   [ projet2.c(11,3) ]
+
+   LOOP BEGIN at projet2.c(78,3)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(79,4)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=1
+      LOOP END
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(79,4)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 34 
+         remark #15477: vector cost: 21.000 
+         remark #15478: estimated potential speedup: 1.600 
+         remark #15486: divides: 1 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(79,4)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15449: unmasked aligned unit stride stores: 1 
+         remark #15450: unmasked unaligned unit stride loads: 1 
+         remark #15462: unmasked indexed (or gather) loads: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 34 
+         remark #15477: vector cost: 21.000 
+         remark #15478: estimated potential speedup: 1.600 
+         remark #15486: divides: 1 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at projet2.c(10,2) inlined into projet2.c(79,4)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at projet2.c(93,3)
+   remark #15527: loop was not vectorized: function call to free(void *) cannot be vectorized   [ projet2.c(94,4) ]
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at projet2.c(49,2)
+   remark #15526: loop was not vectorized: ASM code cannot be vectorized   [ rdtsc.h(9,0) ]
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+projet2.c(24,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+projet2.c(24,3):remark #34026: call to memset implemented as a call to optimized library version
+projet2.c(31,35):remark #34051: REGISTER ALLOCATION : [main] projet2.c:31
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   20[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm5]
+        
+    Routine temporaries
+        Total         :     341
+            Global    :     103
+            Local     :     238
+        Regenerable   :      19
+        Spilled       :      27
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [3.91e-04 ~ 0.0%]
+            Writes    :       2 [3.91e-04 ~ 0.0%]
+        Spills        :     176 bytes*
+            Reads     :      45 [1.14e+00 ~ 1.1%]
+            Writes    :      30 [3.67e-01 ~ 0.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: atoi(const char *)
+
+    Report from: Interprocedural optimizations [ipo]
+
+NEVER EMIT DEFINITION FUNCTION: (atoi(const char *))/usr/include/stdlib.h(362,1)
+
+===========================================================================
+
+Begin optimization report for: rdtsc()
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (rdtsc()) [3] rdtsc.h(6,1)
+
+
+    Report from: Code generation optimizations [cg]
+
+rdtsc.h(6,1):remark #34051: REGISTER ALLOCATION : [rdtsc] rdtsc.h:6
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    2[ rax rdx]
+        
+    Routine temporaries
+        Total         :      13
+            Global    :       0
+            Local     :      13
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: baseline(unsigned int, double *, unsigned int *, double *, double **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (baseline(unsigned int, double *, unsigned int *, double *, double **)) [4] projet2.c(8,76)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at projet2.c(11,3)
+   remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
+   remark #15542: loop was not vectorized: inner loop was already vectorized   [ projet2.c(11,3) ]
+
+   LOOP BEGIN at projet2.c(10,2)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at projet2.c(10,2)
+      remark #15301: PERMUTED LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 34 
+      remark #15477: vector cost: 21.000 
+      remark #15478: estimated potential speedup: 1.600 
+      remark #15486: divides: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at projet2.c(10,2)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15462: unmasked indexed (or gather) loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 34 
+      remark #15477: vector cost: 21.000 
+      remark #15478: estimated potential speedup: 1.600 
+      remark #15486: divides: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at projet2.c(10,2)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+projet2.c(8,76):remark #34051: REGISTER ALLOCATION : [baseline] projet2.c:8
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   21[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0-zmm5]
+        
+    Routine temporaries
+        Total         :      90
+            Global    :      27
+            Local     :      63
+        Regenerable   :       1
+        Spilled       :       9
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      72 bytes*
+            Reads     :      15 [8.76e-01 ~ 0.9%]
+            Writes    :      15 [7.87e-01 ~ 0.8%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: init_tab(unsigned int, double *, unsigned int *, double *, double **)
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (init_tab(unsigned int, double *, unsigned int *, double *, double **)) [5] projet2.c(18,75)
+  -> EXTERN: (21,8) rand(void)
+  -> EXTERN: (22,10) rand(void)
+  -> EXTERN: (23,8) rand(void)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at projet2.c(20,2)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at projet2.c(24,3)
+      remark #25408: memset generated
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at projet2.c(24,3)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 4 
+         remark #15477: vector cost: 2.500 
+         remark #15478: estimated potential speedup: 1.450 
+         remark #15488: --- end vector cost summary ---
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at projet2.c(24,3)
+      <Remainder loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=12
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+projet2.c(24,3):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+projet2.c(24,3):remark #34026: call to memset implemented as a call to optimized library version
+projet2.c(18,75):remark #34051: REGISTER ALLOCATION : [init_tab] projet2.c:18
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   16[ rax rdx rcx rbx rbp rsi rdi r8-r15 zmm0]
+        
+    Routine temporaries
+        Total         :      49
+            Global    :      29
+            Local     :      20
+        Regenerable   :       5
+        Spilled       :       9
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :      72 bytes*
+            Reads     :       9 [2.64e+00 ~ 2.6%]
+            Writes    :       9 [1.39e+00 ~ 1.4%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
