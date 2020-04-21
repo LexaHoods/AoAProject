@@ -58,8 +58,6 @@ void opt_invariant2(unsigned n, double *restrict a, unsigned *restrict ind, doub
     	for(j=0;j<n;j++){
 
         	c[tmp+j]=a[ind[j]]/b[i];
-					fprintf(stderr, "c1 = %f\n",c[tmp+j]);
-					sleep(1);
     	}
 	}
 }
