@@ -40,7 +40,7 @@ do
     #
     cp "plot_kernel.gp" $dir"/"$name
     #Going through kernel code variants
-    for variant in baseline
+    for variant in baseline opt_div opt_invariant opt_invariant2 opt_inversion
     do
     	#
     	echo -e "\tVariant: "$variant

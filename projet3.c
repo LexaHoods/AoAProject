@@ -3,12 +3,13 @@
 #include <stdint.h>
 #include "rdtsc.h"
 #include <time.h>
+#include <emmintrin.h>
 #include "kernel.h"
 #include "common.h"
 #define NB_METAS 31
 
 
-void init_tab(unsigned n, double* a, unsigned* ind, double* b, double* c){
+void init_tab(unsigned n, double *restrict a, unsigned *restrict ind, double *restrict b, double *restrict c){
 	unsigned i,j;
 	for(i=0;i<n;i++){
 		a[i]=rand();
@@ -43,10 +44,10 @@ int main (int argc, char *argv[]) {
 
 	for (m=0; m<NB_METAS; m++) {
 		/* allocate arrays */
-		unsigned *ind = malloc (size * sizeof(unsigned));
-		double *a = malloc (size * sizeof(double));
-		double *b = malloc (size * sizeof(double));
-		double *c = malloc (size * size * sizeof(double));
+		unsigned *restrict ind = _mm_malloc (size * sizeof(unsigned),64);
+		double  *restrict a = _mm_malloc (size * sizeof(double),64);
+		double  *restrict b = _mm_malloc (size * sizeof(double),64);
+		double  *restrict c = _mm_malloc (size * size * sizeof(double),64);
 
 		/* init arrays */
 		srand(0);
@@ -58,11 +59,27 @@ int main (int argc, char *argv[]) {
 			for (i=0; i<repw; i++){
 			 #if BASELINE
 					baseline(size,a,ind,b,c);
+			 #elif OPTDIV
+			 		opt_div(size,a,ind,b,c);
+			 #elif OPTINVA
+					opt_invariant(size,a,ind,b,c);
+			 #elif OPTINVA2
+					opt_invariant2(size,a,ind,b,c);
+			 #elif OPTINV
+					opt_inversion(size,a,ind,b,c);
 			#endif
 			}
 		} else {
 			#if BASELINE
 				 baseline(size,a,ind,b,c);
+			#elif OPTDIV
+				opt_div(size,a,ind,b,c);
+			#elif OPTINVA
+				opt_invariant(size,a,ind,b,c);
+			#elif OPTINVA2
+				opt_invariant2(size,a,ind,b,c);
+			#elif OPTINV
+				opt_inversion(size,a,ind,b,c);
 		 #endif
 		}
 		t2 = clock();
@@ -74,6 +91,14 @@ int main (int argc, char *argv[]) {
 		for (i=0; i<repm; i++){
 		 #if BASELINE
 				 baseline(size,a,ind,b,c);
+		 #elif OPTDIV
+				opt_div(size,a,ind,b,c);
+		 #elif OPTINVA
+				opt_invariant(size,a,ind,b,c);
+		 #elif OPTINVA2
+				opt_invariant2(size,a,ind,b,c);
+		 #elif OPTINV
+				opt_inversion(size,a,ind,b,c);
 		 #endif
 		}
 
@@ -86,10 +111,10 @@ int main (int argc, char *argv[]) {
 		fprintf (stdout,"%5d; %.8f;\n",m, elapsed / ((float) repm*size*size));
 
 		/* free arrays */
-		free (ind);
-		free (a);
-		free (b);
-		free (c);
+		_mm_free (ind);
+		_mm_free (a);
+		_mm_free (b);
+		_mm_free (c);
 	}
 
 	sort(cycles, samples_count);
@@ -112,7 +137,7 @@ int main (int argc, char *argv[]) {
 	bpc = ((float) repm*size*size)/ mea;
 
 	//
-	fprintf(stderr, "\n%15.3lf; %15.3lf; %15.3lf; %15.3lf; %15.3lf; %15.3lf %%;\n",
+	fprintf(stderr, "\n     %15.3lf; %15.3lf; %15.3lf; %15.3lf; %15.3lf; %15.3lf %%;\n",
 	min,
 	max,
 	avg,
