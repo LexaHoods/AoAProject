@@ -1,0 +1,1 @@
+void baseline(unsigned n, double* a, unsigned *ind, double* b, double* c);
