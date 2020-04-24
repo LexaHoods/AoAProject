@@ -26,7 +26,7 @@ mkdir -p $dir $dir"/logs"
 cp "plot_all.gp" $dir
 #Compiler optimizations
 #GCC compilation:"O1 -funroll-loops -ftree-loop-vectorize " "O2 -funroll-loops -ftree-loop-vectorize " "O3 -funroll-loops " "Ofast -funroll-loops" "Os"
-for opt in "O1" "O2" "O3" "Ofast" "Os"
+for opt in  "O1" "O2" "O3" "Ofast" "Os"
 
 do
     #
@@ -40,7 +40,7 @@ do
     #
     cp "plot_kernel.gp" $dir"/"$name
     #Going through kernel code variants
-    for variant in baseline opt_div opt_invariant opt_invariant2 opt_inversion
+    for variant in baseline opt_invariant2 opt_inversion opt_intrinsic
     do
     	#
     	echo -e "\tVariant: "$variant
@@ -50,7 +50,7 @@ do
 
     	#Run & select run number & cycles
       #perf stat ./sobel in/input.raw sout/output.raw 2>> "perfstat.txt" | cut -d';' -f1,3 > $dir"/"$name"/data/"$variant
-      # sudo maqao oneview --create-report=one binary=projetgcc run_command="<binary> $1 $2 $3" pinning_command="taskset -c 1"
+      #sudo maqao oneview --create-report=one binary=projetgcc run_command="<binary> $1 $2 $3" pinning_command="taskset -c 1"
       # sudo likwid-perfctr -g L3 taskset -c 1 ./projetgcc $1 $2 $3
     	./projetgcc $1 $2 $3 | cut -d';' -f1,2 > $dir"/"$name"/data/"$variant
     	echo

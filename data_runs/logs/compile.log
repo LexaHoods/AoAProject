@@ -8,16 +8,16 @@ gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o p
 #  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
@@ -38,6 +38,26 @@ gcc -DOPTINV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o pro
 #   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTUNROLLING=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTUNROLLING=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
 gcc -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
@@ -48,16 +68,88 @@ gcc -DBASELINE=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o p
 #  -DBASELINE=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTINVA=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
+gcc -DOPTINVA=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
+gcc -DOPTDIV=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
@@ -78,6 +170,22 @@ gcc -DOPTINV=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o pro
 #   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
 gcc -DBASELINE=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
@@ -88,16 +196,16 @@ gcc -DBASELINE=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o p
 #  -DBASELINE=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTINVA=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
+gcc -DOPTDIV=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
@@ -118,6 +226,22 @@ gcc -DOPTINV=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o pro
 #   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP2=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
 gcc -DBASELINE=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
@@ -128,16 +252,16 @@ gcc -DBASELINE=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -
 #  -DBASELINE=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTINVA=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -Ofast  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
+gcc -DOPTDIV=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -Ofast  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
@@ -158,6 +282,22 @@ gcc -DOPTINV=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o 
 #   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP2=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP2=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  common.c -o commongcc.o -lm -c
 gcc -DBASELINE=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
@@ -168,16 +308,16 @@ gcc -DBASELINE=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o p
 #  -DBASELINE=1 -g3 -march=native -Os  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTINVA=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
+gcc -DOPTINVA=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -Os  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -Os  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -Os  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+gcc -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
+gcc -DOPTDIV=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 #   -g3 -march=native -Os  kernel.c -o kernelicc.o -lm -c
 #   -g3 -march=native -Os  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projeticc.o -c
@@ -198,156 +338,26 @@ gcc -DOPTINV=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o pro
 #   -g3 -march=native -Os  common.c -o commonicc.o -lm -c
 #  -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projeticc.o -c
 #  -DOPTDIV=1 -g3 -march=native -Os  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTINV=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DOPTINV=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  common.c -o commongcc.o -lm -c
-gcc -DOPTINV=1 -g3 -march=native -O3  projet3.c -o projetgcc.o -c
-gcc -DOPTINV=1 -g3 -march=native -O3  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O3  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O3  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O3  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -Ofast  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -Ofast  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -Ofast  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -Ofast  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -Ofast  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -Ofast  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Os  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Os  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Os  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Os  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Os  common.c -o commongcc.o -lm -c
+gcc -DOPTLOOP2=1 -g3 -march=native -Os  projet3.c -o projetgcc.o -c
+gcc -DOPTLOOP2=1 -g3 -march=native -Os  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Os  kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Os  common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Os  projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Os  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
 gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
@@ -356,33 +366,6 @@ gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O3  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Ofast  kernel.c -o kernelgcc.o -lm -c
@@ -391,183 +374,350 @@ gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
 gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -Os  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O2  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O2  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O2  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O2  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O2  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O2  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O2  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O2  projet3.c -o projetgcc.o -c
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DBASELINE=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DBASELINE=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DBASELINE=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTDIV=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
-gcc  -g3 -march=native -O1  kernel.c -o kernelgcc.o -lm -c
-gcc  -g3 -march=native -O1  common.c -o commongcc.o -lm -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projet3.c -o projetgcc.o -c
-gcc -DOPTINVA2=1 -g3 -march=native -O1  projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
-#   -g3 -march=native -O1  kernel.c -o kernelicc.o -lm -c
-#   -g3 -march=native -O1  common.c -o commonicc.o -lm -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projet3.c -o projeticc.o -c
-#  -DOPTDIV=1 -g3 -march=native -O1  projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O1 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O1 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O1 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O1 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O2 -mavx projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O2 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O2 -mavx projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O2 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O2 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O2 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O2 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O2 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O2 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O2 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O3 -mavx projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O3 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O3 -mavx projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O3 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O3 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O3 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O3 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O3 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O3 -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O3 -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -Ofast -mavx projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -Ofast -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast -mavx common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -Ofast -mavx projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -Ofast -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -Ofast -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -Ofast -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -Ofast -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -Ofast -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -Ofast -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -Ofast -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Os -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Os -mavx common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -Os -mavx projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -Os -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Os -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Os -mavx common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -Os -mavx projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -Os -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Os -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Os -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -Os -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -Os -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Os -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Os -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Os -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Os -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Os -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Os -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -Os -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -Os -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Os -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Os -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Os -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Os -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Os -mavx kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Os -mavx common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -Os -mavx projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -Os -mavx projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Os -mavx kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Os -mavx common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Os -mavx projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Os -mavx projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O1 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O1 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O1 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O1 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O1 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O1 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O1 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O2 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O2 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx512f common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O2 -mavx512f projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O2 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O2 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O2 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O2 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O2 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O2 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O2 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O2 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O2 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O2 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O2 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O2 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -O3 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -O3 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx512f common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -O3 -mavx512f projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -O3 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -O3 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -O3 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINV=1 -g3 -march=native -O3 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINV=1 -g3 -march=native -O3 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -O3 -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -O3 -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O3 -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINTRINSIC=1 -g3 -march=native -O3 -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -O3 -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -O3 -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -O3 -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx512f common.c -o commongcc.o -lm -c
+gcc -DBASELINE=1 -g3 -march=native -Ofast -mavx512f projet3.c -o projetgcc.o -c
+gcc -DBASELINE=1 -g3 -march=native -Ofast -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast -mavx512f common.c -o commonicc.o -lm -c
+#  -DBASELINE=1 -g3 -march=native -Ofast -mavx512f projet3.c -o projeticc.o -c
+#  -DBASELINE=1 -g3 -march=native -Ofast -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+gcc  -g3 -march=native -Ofast -mavx512f kernel.c -o kernelgcc.o -lm -c
+gcc  -g3 -march=native -Ofast -mavx512f common.c -o commongcc.o -lm -c
+gcc -DOPTINVA2=1 -g3 -march=native -Ofast -mavx512f projet3.c -o projetgcc.o -c
+gcc -DOPTINVA2=1 -g3 -march=native -Ofast -mavx512f projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+#   -g3 -march=native -Ofast -mavx512f kernel.c -o kernelicc.o -lm -c
+#   -g3 -march=native -Ofast -mavx512f common.c -o commonicc.o -lm -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx512f projet3.c -o projeticc.o -c
+#  -DOPTDIV=1 -g3 -march=native -Ofast -mavx512f projeticc.o kernelicc.o commonicc.o -o projeticc -lm

@@ -1,7 +1,7 @@
 CC = gcc
 # ICC = icc
 CFLAGS= -g3 -march=native
-OFLAGS=
+OFLAGS= -mavx
 
 
 baseline:
@@ -46,6 +46,25 @@ opt_inversion:
 	$(CC)  $(CFLAGS) -$(O) $(OFLAGS) common.c -o commongcc.o -lm -c
 	$(CC) -DOPTINV=1 $(CFLAGS) -$(O) $(OFLAGS) projet3.c -o projetgcc.o -c
 	$(CC) -DOPTINV=1 $(CFLAGS) -$(O) $(OFLAGS) projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+	# $(ICC)  $(CFLAGS) -$(O) $(OFLAGS) kernel.c -o kernelicc.o -lm -c
+	# $(ICC)  $(CFLAGS) -$(O) $(OFLAGS) common.c -o commonicc.o -lm -c
+	# $(ICC) -DOPTDIV=1 $(CFLAGS) -$(O) $(OFLAGS) projet3.c -o projeticc.o -c
+	# $(ICC) -DOPTDIV=1 $(CFLAGS) -$(O) $(OFLAGS) projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+
+opt_loop:
+	$(CC)  $(CFLAGS) -$(O) $(OFLAGS) kernel.c -o kernelgcc.o -lm -c
+	$(CC)  $(CFLAGS) -$(O) $(OFLAGS) common.c -o commongcc.o -lm -c
+	$(CC) -DOPTLOOP=1 $(CFLAGS) -$(O) $(OFLAGS) projet3.c -o projetgcc.o -c
+	$(CC) -DOPTLOOP=1 $(CFLAGS) -$(O) $(OFLAGS) projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
+	# $(ICC)  $(CFLAGS) -$(O) $(OFLAGS) kernel.c -o kernelicc.o -lm -c
+	# $(ICC)  $(CFLAGS) -$(O) $(OFLAGS) common.c -o commonicc.o -lm -c
+	# $(ICC) -DOPTDIV=1 $(CFLAGS) -$(O) $(OFLAGS) projet3.c -o projeticc.o -c
+	# $(ICC) -DOPTDIV=1 $(CFLAGS) -$(O) $(OFLAGS) projeticc.o kernelicc.o commonicc.o -o projeticc -lm
+opt_intrinsic:
+	$(CC)  $(CFLAGS) -$(O) $(OFLAGS) kernel.c -o kernelgcc.o -lm -c
+	$(CC)  $(CFLAGS) -$(O) $(OFLAGS) common.c -o commongcc.o -lm -c
+	$(CC) -DOPTINTRINSIC=1 $(CFLAGS) -$(O) $(OFLAGS) projet3.c -o projetgcc.o -c
+	$(CC) -DOPTINTRINSIC=1 $(CFLAGS) -$(O) $(OFLAGS) projetgcc.o kernelgcc.o commongcc.o -o projetgcc -lm
 	# $(ICC)  $(CFLAGS) -$(O) $(OFLAGS) kernel.c -o kernelicc.o -lm -c
 	# $(ICC)  $(CFLAGS) -$(O) $(OFLAGS) common.c -o commonicc.o -lm -c
 	# $(ICC) -DOPTDIV=1 $(CFLAGS) -$(O) $(OFLAGS) projet3.c -o projeticc.o -c

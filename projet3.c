@@ -67,6 +67,10 @@ int main (int argc, char *argv[]) {
 					opt_invariant2(size,a,ind,b,c);
 			 #elif OPTINV
 					opt_inversion(size,a,ind,b,c);
+			#elif OPTLOOP
+				 opt_loop(size,a,ind,b,c);
+			#elif OPTINTRINSIC
+		 		 opt_intrinsic(size,a,ind,b,c);
 			#endif
 			}
 		} else {
@@ -80,6 +84,10 @@ int main (int argc, char *argv[]) {
 				opt_invariant2(size,a,ind,b,c);
 			#elif OPTINV
 				opt_inversion(size,a,ind,b,c);
+			#elif OPTLOOP
+				opt_loop(size,a,ind,b,c);
+			#elif OPTINTRINSIC
+				 opt_intrinsic(size,a,ind,b,c);
 		 #endif
 		}
 		t2 = clock();
@@ -99,6 +107,10 @@ int main (int argc, char *argv[]) {
 				opt_invariant2(size,a,ind,b,c);
 		 #elif OPTINV
 				opt_inversion(size,a,ind,b,c);
+		 #elif OPTLOOP
+			 opt_loop(size,a,ind,b,c);
+		 #elif OPTINTRINSIC
+				opt_intrinsic(size,a,ind,b,c);
 		 #endif
 		}
 
