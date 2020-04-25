@@ -18,7 +18,7 @@ void init_tab(unsigned n, double *restrict a, unsigned *restrict ind, double *re
 		for(j=0;j<n;j++){
 			c[i*n+j]=0;
 		}
-    }
+	}
 }
 
 
@@ -30,9 +30,9 @@ int main (int argc, char *argv[]) {
 	}
 
 	float temps;
-  clock_t t1, t2;
-  u64 samples_count = 0;
-  u64 cycles[NB_METAS], cycles_a, cycles_b;
+	clock_t t1, t2;
+	u64 samples_count = 0;
+	u64 cycles[NB_METAS], cycles_a, cycles_b;
 
 	int i, m;
 	FILE* fichier = fopen("perf.csv", "w");
@@ -57,38 +57,42 @@ int main (int argc, char *argv[]) {
 		t1 = clock();
 		if (m == 0) {
 			for (i=0; i<repw; i++){
-			 #if BASELINE
-					baseline(size,a,ind,b,c);
-			 #elif OPTDIV
-			 		opt_div(size,a,ind,b,c);
-			 #elif OPTINVA
-					opt_invariant(size,a,ind,b,c);
-			 #elif OPTINVA2
-					opt_invariant2(size,a,ind,b,c);
-			 #elif OPTINV
-					opt_inversion(size,a,ind,b,c);
-			#elif OPTLOOP
-				 opt_loop(size,a,ind,b,c);
-			#elif OPTINTRINSIC
-		 		 opt_intrinsic(size,a,ind,b,c);
-			#endif
+				#if BASELINE
+				baseline(size,a,ind,b,c);
+				#elif OPTDIV
+				opt_div(size,a,ind,b,c);
+				#elif OPTINVA
+				opt_invariant(size,a,ind,b,c);
+				#elif OPTINVA2
+				opt_invariant2(size,a,ind,b,c);
+				#elif OPTINV
+				opt_inversion(size,a,ind,b,c);
+				#elif OPTLOOP
+				opt_loop(size,a,ind,b,c);
+				#elif OPTINTRINSIC
+				opt_intrinsic(size,a,ind,b,c);
+				#elif OPTUNROLLING
+				opt_unrolling(size,a,ind,b,c);
+				#endif
 			}
 		} else {
 			#if BASELINE
-				 baseline(size,a,ind,b,c);
+			baseline(size,a,ind,b,c);
 			#elif OPTDIV
-				opt_div(size,a,ind,b,c);
+			opt_div(size,a,ind,b,c);
 			#elif OPTINVA
-				opt_invariant(size,a,ind,b,c);
+			opt_invariant(size,a,ind,b,c);
 			#elif OPTINVA2
-				opt_invariant2(size,a,ind,b,c);
+			opt_invariant2(size,a,ind,b,c);
 			#elif OPTINV
-				opt_inversion(size,a,ind,b,c);
+			opt_inversion(size,a,ind,b,c);
 			#elif OPTLOOP
-				opt_loop(size,a,ind,b,c);
+			opt_loop(size,a,ind,b,c);
 			#elif OPTINTRINSIC
-				 opt_intrinsic(size,a,ind,b,c);
-		 #endif
+			opt_intrinsic(size,a,ind,b,c);
+			#elif OPTUNROLLING
+			opt_unrolling(size,a,ind,b,c);
+			#endif
 		}
 		t2 = clock();
 		temps = (float)(t2-t1)/CLOCKS_PER_SEC;
@@ -97,31 +101,32 @@ int main (int argc, char *argv[]) {
 		/* measure repm repetitions */
 		cycles_a = rdtsc();
 		for (i=0; i<repm; i++){
-		 #if BASELINE
-				 baseline(size,a,ind,b,c);
-		 #elif OPTDIV
-				opt_div(size,a,ind,b,c);
-		 #elif OPTINVA
-				opt_invariant(size,a,ind,b,c);
-		 #elif OPTINVA2
-				opt_invariant2(size,a,ind,b,c);
-		 #elif OPTINV
-				opt_inversion(size,a,ind,b,c);
-		 #elif OPTLOOP
-			 opt_loop(size,a,ind,b,c);
-		 #elif OPTINTRINSIC
-				opt_intrinsic(size,a,ind,b,c);
-		 #endif
+			#if BASELINE
+			baseline(size,a,ind,b,c);
+			#elif OPTDIV
+			opt_div(size,a,ind,b,c);
+			#elif OPTINVA
+			opt_invariant(size,a,ind,b,c);
+			#elif OPTINVA2
+			opt_invariant2(size,a,ind,b,c);
+			#elif OPTINV
+			opt_inversion(size,a,ind,b,c);
+			#elif OPTLOOP
+			opt_loop(size,a,ind,b,c);
+			#elif OPTINTRINSIC
+			opt_intrinsic(size,a,ind,b,c);
+			#elif OPTUNROLLING
+			opt_unrolling(size,a,ind,b,c);
+			#endif
 		}
 
 		cycles_b = rdtsc();
 
 		u64 elapsed = (cycles_b - cycles_a);
 		if (samples_count < NB_METAS)
-      cycles[samples_count++] = elapsed;
+		cycles[samples_count++] = elapsed;
 		/* print performance */
 		fprintf (stdout,"%5d; %.8f;\n",m, elapsed / ((float) repm*size*size));
-
 		/* free arrays */
 		_mm_free (ind);
 		_mm_free (a);

@@ -5,6 +5,10 @@ void baseline(unsigned n, double * a, unsigned * ind, double * b, double * c){
 	for(j=0;j<n;j++){
 		for(i=0;i<n;i++){
 			c[i*n+j]=a[ind[j]]/b[i];
+			//	fprintf(stderr, "ymm0[0] = %f\n",a[ind[j]]);
+			//	fprintf(stderr, "ind[%d] = %d\n",j,ind[j]);
+			//	fprintf(stderr, " c[%d] = %f\n",i*n+j,c[i*n+j]);
+			//	sleep(1);
 		}
 	}
 }
@@ -41,10 +45,10 @@ void opt_inversion(unsigned n, double *restrict a, unsigned *restrict ind, doubl
 
 	for (i=0;i<n;i++){
 
-    	for(j=0;j<n;j++){
+		for(j=0;j<n;j++){
 
-        	c[i*n+j]=a[ind[j]]*(1/b[i]);
-    	}
+			c[i*n+j]=a[ind[j]]*(1/b[i]);
+		}
 	}
 }
 
@@ -56,30 +60,35 @@ void opt_invariant2(unsigned n, double *restrict a, unsigned *restrict ind, doub
 	for (i=0;i<n;i++){
 		tmp = i*n;
 		tmp2 = b[i];
-    	for(j=0;j<n;j++){
-        	c[tmp+j]=a[ind[j]]*(1/tmp2);
+		for(j=0;j<n;j++){
+			c[tmp+j]=a[ind[j]]*(1/tmp2);
 
-    	}
+		}
 	}
 }
 //Oneloop
 void opt_loop(unsigned n, double *restrict  a, unsigned *restrict  ind, double *restrict  b, double *restrict  c){
-    unsigned n2=n*n;
-    for(unsigned i = 0 ; i < n2 ; i++){
-        c[i]=a[ind[i/n]]/b[i%n];
-    }
+	unsigned n2=n*n;
+	for(unsigned i = 0 ; i < n2 ; i++){
+		c[i]=a[ind[i/n]]/b[i%n];
+	}
 }
 
 
-void opt_intrinsic(unsigned n, double *restrict a, unsigned *restrict ind, double *restrict b, double *restrict c){
-	unsigned i,j,tmp,tmp3;
-	__m256d tmp2 = _mm256_setzero_pd ();
-	for (i=0;i<n;i++){
-		tmp = (i*n);
-		tmp2 = _mm256_set1_pd(b[i]);
-    	for(j=0;j<n;j++){
-					tmp3 = ind[j];
-        	c[tmp+j]= _mm256_cvtsd_f64(_mm256_mul_pd(_mm256_set1_pd(a[tmp3]),_mm256_div_pd( _mm256_set1_pd(1.0),tmp2)));
-    	}
+//Intrinsic and unrolling version
+void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, double *restrict  b, double *restrict c){
+	unsigned i,j;
+	__m128i idx ;
+	__m256d ymm0;
+	for(j=0;j<n;j+=4){
+		idx = _mm_load_si128 ((__m128i const *)(ind+j));
+		// idx = _mm_setr_epi32(ind[j],ind[j+1],ind[j+2],ind[j+3]);
+		ymm0 = _mm256_i32gather_pd(a,idx ,8);
+		for(i=0;i<n;i+=4){
+			c[i*n+j]=ymm0[0]/b[i];
+			c[(i+1)*n+(j+1)]=ymm0[1]/b[i+1];
+			c[(i+2)*n+(j+2)]=ymm0[2]/b[i+2];
+			c[(i+3)*n+(j+3)]=ymm0[3]/b[i+3];
+		}
 	}
 }

@@ -26,7 +26,7 @@ mkdir -p $dir $dir"/logs"
 cp "plot_all.gp" $dir
 #Compiler optimizations
 #GCC compilation:"O1 -funroll-loops -ftree-loop-vectorize " "O2 -funroll-loops -ftree-loop-vectorize " "O3 -funroll-loops " "Ofast -funroll-loops" "Os"
-for opt in  "O1" "O2" "O3" "Ofast" "Os"
+for opt in "O1" "O2" "O3" "Ofast" "Os"
 
 do
     #
@@ -39,7 +39,7 @@ do
 
     #
     cp "plot_kernel.gp" $dir"/"$name
-    #Going through kernel code variants
+    #Going through kernel code variants baseline opt_invariant2 opt_inversion opt_unrolling
     for variant in baseline opt_invariant2 opt_inversion opt_intrinsic
     do
     	#
