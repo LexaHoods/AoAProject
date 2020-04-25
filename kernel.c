@@ -86,9 +86,9 @@ void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, doub
 		ymm0 = _mm256_i32gather_pd(a,idx ,8);
 		for(i=0;i<n;i+=4){
 			c[i*n+j]=ymm0[0]/b[i];
-			c[(i+1)*n+(j+1)]=ymm0[1]/b[i+1];
-			c[(i+2)*n+(j+2)]=ymm0[2]/b[i+2];
-			c[(i+3)*n+(j+3)]=ymm0[3]/b[i+3];
+			c[(i+1)*n+(j+1)]=ymm0[1]*(1/b[i+1]);
+			c[(i+2)*n+(j+2)]=ymm0[2]*(1/b[i+2]);
+			c[(i+3)*n+(j+3)]=ymm0[3]*(1/b[i+3]);
 		}
 	}
 }
