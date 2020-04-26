@@ -1,0 +1,1 @@
+Linux lexahood-Zephyrus-S-GX531GV-GX535GV 5.4.0-24-lowlatency #28-Ubuntu SMP PREEMPT Thu Apr 9 23:05:08 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
