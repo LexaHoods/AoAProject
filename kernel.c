@@ -80,10 +80,11 @@ void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, doub
 			c[(i+2)*n+(j+2)]=ymm0[2]*(1/b[i+2]);
 			c[(i+3)*n+(j+3)]=ymm0[3]*(1/b[i+3]);
 		}
+		for(;i<n;i++){
+			c[i*n+j]=a[ind[j]]*(1/b[i]);
+		}
 	}
-	for(;i<n;i++){
-		c[i*n+j]=a[ind[j]]*(1/b[i]);
-	}
+
 
 }
 
@@ -104,9 +105,10 @@ void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *r
 			c[(i+2)*n+(j+2)]=ymm0[2]*(1/b[i+2]);
 			c[(i+3)*n+(j+3)]=ymm0[3]*(1/b[i+3]);
 		}
+		for(;i<n;i++){
+			c[i*n+j]=a[ind[j]]*(1/b[i]);
+		}
 	}
 
-	for(;i<n;i++){
-		c[i*n+j]=a[ind[j]]*(1/b[i]);
-	}
+
 }
