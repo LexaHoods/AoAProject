@@ -88,6 +88,7 @@ void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, doub
 
 }
 
+
 //Intrinsic and unrolling abd parallel version
 void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *restrict  b, double *restrict c){
 	unsigned i,j;
@@ -109,6 +110,5 @@ void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *r
 			c[i*n+j]=a[ind[j]]*(1/b[i]);
 		}
 	}
-
 
 }

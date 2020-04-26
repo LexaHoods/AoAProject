@@ -5,7 +5,7 @@ set grid
 #set yrange[0:10]
 set autoscale y
 set ylabel "Latence en cycles"
-set xlabel "n itérations"
+set xlabel "n métarépétitions"
 
 set title "Comparison between different implementaions of the kernel"
 

@@ -3,7 +3,7 @@ set term png size 1900,1000
 set grid
 
 set ylabel "Latence en cycles"
-set xlabel "n itérations"
+set xlabel "n métarépétitions"
 
 #set yrange[0:10]
 set autoscale y
