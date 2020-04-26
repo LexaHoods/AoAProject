@@ -1,0 +1,100 @@
+icc  -g3 -O1 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DBASELINE=1 -g3 -O1 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DBASELINE=1 -g3 -O1 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINVA2=1 -g3 -O1 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINVA2=1 -g3 -O1 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINV=1 -g3 -O1 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINV=1 -g3 -O1 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINTRINSIC=1 -g3 -O1 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINTRINSIC=1 -g3 -O1 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTOPMP=1 -g3 -O1 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTOPMP=1 -g3 -O1 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O2 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O2 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DBASELINE=1 -g3 -O2 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DBASELINE=1 -g3 -O2 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O2 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O2 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINVA2=1 -g3 -O2 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINVA2=1 -g3 -O2 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O2 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O2 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINV=1 -g3 -O2 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINV=1 -g3 -O2 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O2 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O2 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINTRINSIC=1 -g3 -O2 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINTRINSIC=1 -g3 -O2 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O2 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O2 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTOPMP=1 -g3 -O2 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTOPMP=1 -g3 -O2 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O3 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O3 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DBASELINE=1 -g3 -O3 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DBASELINE=1 -g3 -O3 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O3 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O3 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINVA2=1 -g3 -O3 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINVA2=1 -g3 -O3 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O3 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O3 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINV=1 -g3 -O3 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINV=1 -g3 -O3 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O3 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O3 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINTRINSIC=1 -g3 -O3 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINTRINSIC=1 -g3 -O3 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O3 -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -O3 -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTOPMP=1 -g3 -O3 -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTOPMP=1 -g3 -O3 -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Ofast -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Ofast -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DBASELINE=1 -g3 -Ofast -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DBASELINE=1 -g3 -Ofast -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Ofast -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Ofast -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINVA2=1 -g3 -Ofast -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINVA2=1 -g3 -Ofast -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Ofast -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Ofast -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINV=1 -g3 -Ofast -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINV=1 -g3 -Ofast -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Ofast -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Ofast -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINTRINSIC=1 -g3 -Ofast -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINTRINSIC=1 -g3 -Ofast -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Ofast -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Ofast -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTOPMP=1 -g3 -Ofast -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTOPMP=1 -g3 -Ofast -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Os -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Os -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DBASELINE=1 -g3 -Os -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DBASELINE=1 -g3 -Os -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Os -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Os -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINVA2=1 -g3 -Os -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINVA2=1 -g3 -Os -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Os -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Os -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINV=1 -g3 -Os -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINV=1 -g3 -Os -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Os -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Os -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTINTRINSIC=1 -g3 -Os -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTINTRINSIC=1 -g3 -Os -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm
+icc  -g3 -Os -mavx2   -qopenmp  kernel.c -o kernel.o -lm -c
+icc  -g3 -Os -mavx2   -qopenmp  common.c -o common.o -lm -c
+icc -DOPTOPMP=1 -g3 -Os -mavx2   -qopenmp  projet.c -o projet.o -c
+icc -DOPTOPMP=1 -g3 -Os -mavx2   -qopenmp  projet.o kernel.o common.o -o projet -lm

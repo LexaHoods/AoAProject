@@ -1,0 +1,181 @@
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp common.c -o common.o -lm -c
+icc -DBASELINE=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.c -o projet.o -c
+icc -DBASELINE=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp common.c -o common.o -lm -c
+icc -DOPTINVA2=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.c -o projet.o -c
+icc -DOPTINVA2=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp common.c -o common.o -lm -c
+icc -DOPTINV=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.c -o projet.o -c
+icc -DOPTINV=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp kernel.c -o kernel.o -lm -c
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp common.c -o common.o -lm -c
+icc -DOPTINTRINSIC=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.c -o projet.o -c
+icc -DOPTINTRINSIC=1 -g3 -O1 -mavx2 -march=native  -qopenmp projet.o kernel.o common.o -o projet -lm
+icc  -g3 -O1 -mavx2 -march=native  -qopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTDIV=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTDIV=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTLOOP=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTLOOP=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -O1 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTDIV=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTDIV=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTLOOP=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTLOOP=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -O2 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTDIV=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTDIV=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTLOOP=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTLOOP=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -O3 -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTDIV=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTDIV=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTLOOP=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTLOOP=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -Ofast -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTDIV=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTDIV=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTLOOP=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTLOOP=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -mavx2 -march=native  -fopenmp common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -Os -mavx2 -march=native  -fopenmp projet.o kernel.o common.o -o projet -lm

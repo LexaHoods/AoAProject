@@ -1,0 +1,565 @@
+[BEGIN]
+
+Running with flag: O1
+	Variant: baseline
+
+       654972204.000;   663978552.000;   659475378.000;   657633472.387;           0.439;           0.319 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 362,84 msec task-clock                #    0,997 CPUs utilized          
+             9 385      context-switches          #    0,001 M/sec                  
+                 3      cpu-migrations            #    0,000 K/sec                  
+             1 227      page-faults               #    0,131 K/sec                  
+    38 040 378 020      cycles                    #    4,063 GHz                      (75,01%)
+    82 223 534 294      instructions              #    2,16  insn per cycle           (75,01%)
+     9 181 985 851      branches                  #  980,684 M/sec                    (75,01%)
+        24 683 650      branch-misses             #    0,27% of all branches          (74,98%)
+
+       9,393801365 seconds time elapsed
+
+       9,370036000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_invariant2
+
+       326732476.000;   338166370.000;   332449423.000;   328475884.323;           0.879;           0.818 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 679,10 msec task-clock                #    0,997 CPUs utilized          
+             4 691      context-switches          #    0,001 M/sec                  
+                 3      cpu-migrations            #    0,001 K/sec                  
+             1 228      page-faults               #    0,262 K/sec                  
+    18 992 272 214      cycles                    #    4,059 GHz                      (74,96%)
+    73 132 556 439      instructions              #    3,85  insn per cycle           (75,04%)
+     9 179 803 853      branches                  # 1961,872 M/sec                    (74,96%)
+        24 352 452      branch-misses             #    0,27% of all branches          (75,04%)
+
+       4,694659513 seconds time elapsed
+
+       4,680821000 seconds user
+       0,002995000 seconds sys
+
+
+
+	Variant: opt_inversion
+
+       483905962.000;   495459134.000;   489682548.000;   486257228.065;           0.594;           0.584 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          6 923,11 msec task-clock                #    0,997 CPUs utilized          
+             6 922      context-switches          #    1,000 K/sec                  
+                 5      cpu-migrations            #    0,001 K/sec                  
+             1 228      page-faults               #    0,177 K/sec                  
+    28 120 324 009      cycles                    #    4,062 GHz                      (74,99%)
+    73 207 853 842      instructions              #    2,60  insn per cycle           (74,98%)
+     9 191 500 207      branches                  # 1327,655 M/sec                    (75,04%)
+        24 519 101      branch-misses             #    0,27% of all branches          (74,99%)
+
+       6,946025665 seconds time elapsed
+
+       6,929983000 seconds user
+       0,000000000 seconds sys
+
+
+
+	Variant: opt_intrinsic
+
+       198425906.000;   212308902.000;   205367404.000;   201154016.839;           1.436;           1.306 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          2 876,31 msec task-clock                #    0,997 CPUs utilized          
+             2 885      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 228      page-faults               #    0,427 K/sec                  
+    11 685 100 991      cycles                    #    4,063 GHz                      (75,02%)
+    13 252 964 424      instructions              #    1,13  insn per cycle           (74,91%)
+       602 318 577      branches                  #  209,407 M/sec                    (75,05%)
+         6 256 550      branch-misses             #    1,04% of all branches          (75,02%)
+
+       2,885924026 seconds time elapsed
+
+       2,876349000 seconds user
+       0,002996000 seconds sys
+
+
+
+	Variant: opt_opmp
+
+        55526492.000;    56976434.000;    56251463.000;    55677656.452;           5.187;           0.543 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 557,88 msec task-clock                #   11,911 CPUs utilized          
+             9 592      context-switches          #    0,001 M/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             2 097      page-faults               #    0,219 K/sec                  
+    36 054 366 117      cycles                    #    3,772 GHz                      (75,00%)
+    14 286 555 788      instructions              #    0,40  insn per cycle           (74,96%)
+       693 697 147      branches                  #   72,579 M/sec                    (75,02%)
+         9 379 146      branch-misses             #    1,35% of all branches          (75,02%)
+
+       0,802416592 seconds time elapsed
+
+       9,537091000 seconds user
+       0,034857000 seconds sys
+
+
+
+
+Running with flag: O2
+	Variant: baseline
+
+       664525122.000;   684368890.000;   674447006.000;   669285848.065;           0.432;           0.605 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 570,71 msec task-clock                #    0,997 CPUs utilized          
+             9 603      context-switches          #    0,001 M/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1 227      page-faults               #    0,128 K/sec                  
+    38 816 729 706      cycles                    #    4,056 GHz                      (74,99%)
+    73 162 596 773      instructions              #    1,88  insn per cycle           (75,00%)
+     9 180 899 288      branches                  #  959,270 M/sec                    (75,00%)
+        24 682 804      branch-misses             #    0,27% of all branches          (75,00%)
+
+       9,601783449 seconds time elapsed
+
+       9,578263000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_invariant2
+
+       323786032.000;   334751924.000;   329268978.000;   325662041.935;           0.887;           0.827 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 639,44 msec task-clock                #    0,997 CPUs utilized          
+             4 650      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 227      page-faults               #    0,264 K/sec                  
+    18 835 785 084      cycles                    #    4,060 GHz                      (74,97%)
+    73 117 694 510      instructions              #    3,88  insn per cycle           (75,04%)
+     9 155 750 137      branches                  # 1973,461 M/sec                    (74,97%)
+        24 330 002      branch-misses             #    0,27% of all branches          (75,03%)
+
+       4,654563456 seconds time elapsed
+
+       4,643144000 seconds user
+       0,000998000 seconds sys
+
+
+
+	Variant: opt_inversion
+
+       323850488.000;   336643554.000;   330247021.000;   325857860.387;           0.886;           0.910 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 643,45 msec task-clock                #    0,997 CPUs utilized          
+             4 657      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 229      page-faults               #    0,265 K/sec                  
+    18 821 961 561      cycles                    #    4,053 GHz                      (75,01%)
+    73 111 293 342      instructions              #    3,88  insn per cycle           (75,01%)
+     9 151 183 031      branches                  # 1970,773 M/sec                    (74,94%)
+        24 336 495      branch-misses             #    0,27% of all branches          (75,03%)
+
+       4,658900906 seconds time elapsed
+
+       4,646121000 seconds user
+       0,001996000 seconds sys
+
+
+
+	Variant: opt_intrinsic
+
+       198470086.000;   202219408.000;   200344747.000;   199526667.226;           1.447;           0.547 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          2 853,49 msec task-clock                #    0,997 CPUs utilized          
+             2 865      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 229      page-faults               #    0,431 K/sec                  
+    11 596 885 428      cycles                    #    4,064 GHz                      (74,99%)
+    13 235 331 692      instructions              #    1,14  insn per cycle           (74,99%)
+       587 784 242      branches                  #  205,988 M/sec                    (75,02%)
+         6 258 102      branch-misses             #    1,06% of all branches          (75,00%)
+
+       2,863021545 seconds time elapsed
+
+       2,853467000 seconds user
+       0,002993000 seconds sys
+
+
+
+	Variant: opt_opmp
+
+        57453370.000;    58489278.000;    57971324.000;    57773140.710;           4.999;           0.353 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 927,45 msec task-clock                #   11,912 CPUs utilized          
+             9 980      context-switches          #    0,001 M/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             2 098      page-faults               #    0,211 K/sec                  
+    37 446 013 980      cycles                    #    3,772 GHz                      (75,01%)
+    14 304 209 748      instructions              #    0,38  insn per cycle           (75,01%)
+       691 390 177      branches                  #   69,644 M/sec                    (74,99%)
+         9 317 769      branch-misses             #    1,35% of all branches          (74,99%)
+
+       0,833416096 seconds time elapsed
+
+       9,918285000 seconds user
+       0,023904000 seconds sys
+
+
+
+
+Running with flag: O3
+	Variant: baseline
+
+       672296692.000;   699869952.000;   686083322.000;   680157494.839;           0.425;           0.756 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 683,10 msec task-clock                #    0,997 CPUs utilized          
+             9 709      context-switches          #    0,001 M/sec                  
+                28      cpu-migrations            #    0,003 K/sec                  
+             1 227      page-faults               #    0,127 K/sec                  
+    39 301 521 257      cycles                    #    4,059 GHz                      (75,00%)
+    73 180 331 471      instructions              #    1,86  insn per cycle           (75,00%)
+     9 179 150 661      branches                  #  947,956 M/sec                    (75,00%)
+        24 682 141      branch-misses             #    0,27% of all branches          (75,00%)
+
+       9,715667062 seconds time elapsed
+
+       9,690657000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_invariant2
+
+       323855642.000;   334872772.000;   329364207.000;   326710358.774;           0.884;           1.093 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 652,30 msec task-clock                #    0,997 CPUs utilized          
+             4 658      context-switches          #    0,001 M/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             1 227      page-faults               #    0,264 K/sec                  
+    18 831 128 796      cycles                    #    4,048 GHz                      (74,96%)
+    73 133 009 625      instructions              #    3,88  insn per cycle           (75,04%)
+     9 153 439 909      branches                  # 1967,508 M/sec                    (75,03%)
+        24 365 909      branch-misses             #    0,27% of all branches          (74,97%)
+
+       4,667785085 seconds time elapsed
+
+       4,655205000 seconds user
+       0,001997000 seconds sys
+
+
+
+	Variant: opt_inversion
+
+       323829364.000;   334479850.000;   329154607.000;   325667140.323;           0.887;           0.651 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 638,91 msec task-clock                #    0,997 CPUs utilized          
+             4 653      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 228      page-faults               #    0,265 K/sec                  
+    18 815 150 650      cycles                    #    4,056 GHz                      (75,01%)
+    73 155 676 211      instructions              #    3,89  insn per cycle           (74,94%)
+     9 152 236 072      branches                  # 1972,927 M/sec                    (75,03%)
+        24 330 419      branch-misses             #    0,27% of all branches          (75,02%)
+
+       4,654362893 seconds time elapsed
+
+       4,641639000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_intrinsic
+
+       198301322.000;   205197652.000;   201749487.000;   201166683.355;           1.436;           1.013 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          2 924,45 msec task-clock                #    0,997 CPUs utilized          
+             2 934      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 228      page-faults               #    0,420 K/sec                  
+    11 872 294 956      cycles                    #    4,060 GHz                      (74,98%)
+    13 246 862 429      instructions              #    1,12  insn per cycle           (74,98%)
+       587 046 016      branches                  #  200,737 M/sec                    (75,02%)
+         6 272 280      branch-misses             #    1,07% of all branches          (75,01%)
+
+       2,934252536 seconds time elapsed
+
+       2,925624000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_opmp
+
+        56381634.000;    57263044.000;    56822339.000;    56564773.032;           5.106;           0.430 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 739,08 msec task-clock                #   11,910 CPUs utilized          
+             9 578      context-switches          #    0,983 K/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             2 096      page-faults               #    0,215 K/sec                  
+    36 738 143 788      cycles                    #    3,772 GHz                      (75,00%)
+    14 317 787 631      instructions              #    0,39  insn per cycle           (74,99%)
+       693 438 728      branches                  #   71,202 M/sec                    (75,01%)
+         9 360 257      branch-misses             #    1,35% of all branches          (75,01%)
+
+       0,817718198 seconds time elapsed
+
+       9,730362000 seconds user
+       0,022916000 seconds sys
+
+
+
+
+Running with flag: Ofast
+	Variant: baseline
+
+       677009456.000;   690500154.000;   683754805.000;   680210515.613;           0.425;           0.482 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 683,30 msec task-clock                #    0,997 CPUs utilized          
+             9 712      context-switches          #    0,001 M/sec                  
+                42      cpu-migrations            #    0,004 K/sec                  
+             1 217      page-faults               #    0,126 K/sec                  
+    39 357 170 429      cycles                    #    4,064 GHz                      (75,00%)
+    73 204 915 372      instructions              #    1,86  insn per cycle           (75,00%)
+     9 176 866 891      branches                  #  947,700 M/sec                    (75,00%)
+        24 658 977      branch-misses             #    0,27% of all branches          (75,00%)
+
+       9,715700499 seconds time elapsed
+
+       9,690689000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_invariant2
+
+       323728222.000;   335415842.000;   329572032.000;   325271641.290;           0.888;           0.641 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 633,03 msec task-clock                #    0,997 CPUs utilized          
+             4 648      context-switches          #    0,001 M/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1 218      page-faults               #    0,263 K/sec                  
+    18 814 080 382      cycles                    #    4,061 GHz                      (75,01%)
+    73 164 432 487      instructions              #    3,89  insn per cycle           (74,95%)
+     9 146 782 626      branches                  # 1974,254 M/sec                    (75,03%)
+        24 355 769      branch-misses             #    0,27% of all branches          (75,02%)
+
+       4,648473472 seconds time elapsed
+
+       4,636715000 seconds user
+       0,000998000 seconds sys
+
+
+
+	Variant: opt_inversion
+
+       323743922.000;   326314990.000;   325029456.000;   324829128.581;           0.889;           0.218 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          4 625,77 msec task-clock                #    0,997 CPUs utilized          
+             4 641      context-switches          #    0,001 M/sec                  
+                 1      cpu-migrations            #    0,000 K/sec                  
+             1 216      page-faults               #    0,263 K/sec                  
+    18 802 950 932      cycles                    #    4,065 GHz                      (74,99%)
+    73 101 261 581      instructions              #    3,89  insn per cycle           (75,00%)
+     9 144 764 744      branches                  # 1976,918 M/sec                    (75,01%)
+        24 346 001      branch-misses             #    0,27% of all branches          (75,00%)
+
+       4,640963875 seconds time elapsed
+
+       4,628528000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_intrinsic
+
+       204798348.000;   214083712.000;   209441030.000;   206522542.516;           1.398;           0.858 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          2 952,10 msec task-clock                #    0,997 CPUs utilized          
+             2 960      context-switches          #    0,001 M/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1 216      page-faults               #    0,412 K/sec                  
+    11 993 931 459      cycles                    #    4,063 GHz                      (75,02%)
+    13 267 650 018      instructions              #    1,11  insn per cycle           (75,02%)
+       589 201 772      branches                  #  199,587 M/sec                    (74,93%)
+         6 260 047      branch-misses             #    1,06% of all branches          (75,04%)
+
+       2,962080222 seconds time elapsed
+
+       2,953289000 seconds user
+       0,001996000 seconds sys
+
+
+
+	Variant: opt_opmp
+
+        58170130.000;    59477780.000;    58823955.000;    58525981.806;           4.935;           0.389 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+         10 053,65 msec task-clock                #   11,913 CPUs utilized          
+             9 852      context-switches          #    0,980 K/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             2 086      page-faults               #    0,207 K/sec                  
+    37 926 140 553      cycles                    #    3,772 GHz                      (75,00%)
+    14 292 920 132      instructions              #    0,38  insn per cycle           (74,95%)
+       685 365 170      branches                  #   68,171 M/sec                    (74,99%)
+         9 441 717      branch-misses             #    1,38% of all branches          (75,06%)
+
+       0,843895959 seconds time elapsed
+
+      10,044185000 seconds user
+       0,023914000 seconds sys
+
+
+
+
+Running with flag: Os
+	Variant: baseline
+
+       654592654.000;   659738602.000;   657165628.000;   656537491.613;           0.440;           0.182 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 377,24 msec task-clock                #    0,997 CPUs utilized          
+             9 419      context-switches          #    0,001 M/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1 227      page-faults               #    0,131 K/sec                  
+    38 146 848 423      cycles                    #    4,068 GHz                      (75,00%)
+    82 226 333 490      instructions              #    2,16  insn per cycle           (75,00%)
+     9 205 438 231      branches                  #  981,679 M/sec                    (75,00%)
+        24 670 789      branch-misses             #    0,27% of all branches          (75,00%)
+
+       9,407608798 seconds time elapsed
+
+       9,384684000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_invariant2
+
+       631118440.000;   634504156.000;   632811298.000;   632749898.710;           0.456;           0.150 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 008,12 msec task-clock                #    0,997 CPUs utilized          
+             9 038      context-switches          #    0,001 M/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             1 229      page-faults               #    0,136 K/sec                  
+    36 592 811 163      cycles                    #    4,062 GHz                      (74,99%)
+    73 181 799 269      instructions              #    2,00  insn per cycle           (75,00%)
+     9 203 455 577      branches                  # 1021,684 M/sec                    (75,00%)
+        24 653 331      branch-misses             #    0,27% of all branches          (75,00%)
+
+       9,037908067 seconds time elapsed
+
+       9,015310000 seconds user
+       0,001995000 seconds sys
+
+
+
+	Variant: opt_inversion
+
+       631763742.000;   641497232.000;   636630487.000;   633003324.839;           0.456;           0.274 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          9 012,34 msec task-clock                #    0,997 CPUs utilized          
+             9 042      context-switches          #    0,001 M/sec                  
+                 8      cpu-migrations            #    0,001 K/sec                  
+             1 228      page-faults               #    0,136 K/sec                  
+    36 623 772 116      cycles                    #    4,064 GHz                      (74,97%)
+    73 159 779 696      instructions              #    2,00  insn per cycle           (75,01%)
+     9 209 992 275      branches                  # 1021,932 M/sec                    (75,01%)
+        24 635 619      branch-misses             #    0,27% of all branches          (75,00%)
+
+       9,042192103 seconds time elapsed
+
+       9,020424000 seconds user
+       0,000997000 seconds sys
+
+
+
+	Variant: opt_intrinsic
+
+       203157966.000;   211816392.000;   207487179.000;   205611722.323;           1.405;           0.951 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+          2 940,83 msec task-clock                #    0,997 CPUs utilized          
+             2 949      context-switches          #    0,001 M/sec                  
+                 2      cpu-migrations            #    0,001 K/sec                  
+             1 228      page-faults               #    0,418 K/sec                  
+    11 909 311 549      cycles                    #    4,050 GHz                      (74,92%)
+    14 401 094 003      instructions              #    1,21  insn per cycle           (75,05%)
+       608 031 614      branches                  #  206,755 M/sec                    (75,02%)
+         6 268 472      branch-misses             #    1,03% of all branches          (75,00%)
+
+       2,950802927 seconds time elapsed
+
+       2,942915000 seconds user
+       0,000998000 seconds sys
+
+
+
+	Variant: opt_opmp
+
+        61211258.000;    62318550.000;    61764904.000;    61373675.806;           4.706;           0.423 %;
+
+ Performance counter stats for './projet 380 1000 2000':
+
+         10 552,78 msec task-clock                #   11,915 CPUs utilized          
+            10 271      context-switches          #    0,973 K/sec                  
+                 2      cpu-migrations            #    0,000 K/sec                  
+             2 098      page-faults               #    0,199 K/sec                  
+    39 809 529 566      cycles                    #    3,772 GHz                      (75,01%)
+    16 576 573 524      instructions              #    0,42  insn per cycle           (74,99%)
+       697 780 894      branches                  #   66,123 M/sec                    (74,99%)
+         9 493 358      branch-misses             #    1,36% of all branches          (75,01%)
+
+       0,885655382 seconds time elapsed
+
+      10,543704000 seconds user
+       0,023908000 seconds sys
+
+
+
+
+rm -rf *.o *~ projet
+
+[DONE]

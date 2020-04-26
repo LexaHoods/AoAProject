@@ -1,0 +1,100 @@
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -O1 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -O2 -funroll-loops -ftree-loop-vectorize  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -O3 -funroll-loops  -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -Ofast -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DBASELINE=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DBASELINE=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINVA2=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINVA2=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINV=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINV=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTINTRINSIC=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTINTRINSIC=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math kernel.c -o kernel.o -lm -c
+gcc  -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math common.c -o common.o -lm -c
+gcc -DOPTOPMP=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.c -o projet.o -c
+gcc -DOPTOPMP=1 -g3 -Os -funroll-loops -mavx2 -march=native  -fopenmp -ffast-math projet.o kernel.o common.o -o projet -lm
