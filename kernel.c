@@ -67,9 +67,10 @@ void opt_loop(unsigned n, double *restrict  a, unsigned *restrict  ind, double *
 //Intrinsic and unrolling version
 void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, double *restrict  b, double *restrict c){
 	unsigned i,j;
-	__m128i idx ;
-	__m256d ymm0;
-	for(j=0;j<n;j+=4){
+	__m128i idx = _mm_setzero_si128();
+	__m256d ymm0 = _mm256_setzero_pd();
+
+	for(j=0;j<(n & ~0x3);j+=4){
 		idx = _mm_load_si128 ((__m128i const *)(ind+j));
 		// idx = _mm_setr_epi32(ind[j],ind[j+1],ind[j+2],ind[j+3]);
 		ymm0 = _mm256_i32gather_pd(a,idx ,8);
@@ -80,6 +81,10 @@ void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, doub
 			c[(i+3)*n+(j+3)]=ymm0[3]*(1/b[i+3]);
 		}
 	}
+	for(;i<n;i++){
+		c[i*n+j]=a[ind[j]]*(1/b[i]);
+	}
+
 }
 
 //Intrinsic and unrolling abd parallel version
@@ -88,7 +93,7 @@ void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *r
 	__m128i idx ;
 	__m256d ymm0;
 	#pragma omp parallel for shared(ymm0) private(i,j)
-	for(j=0;j<n;j+=4){
+	for(j=0;j<(n & ~0x3);j+=4){
 		idx = _mm_load_si128 ((__m128i const *)(ind+j));
 		// idx = _mm_setr_epi32(ind[j],ind[j+1],ind[j+2],ind[j+3]);
 		ymm0 = _mm256_i32gather_pd(a,idx ,8);
@@ -99,5 +104,9 @@ void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *r
 			c[(i+2)*n+(j+2)]=ymm0[2]*(1/b[i+2]);
 			c[(i+3)*n+(j+3)]=ymm0[3]*(1/b[i+3]);
 		}
+	}
+	#pragma omp parallel for shared (a)
+	for(;i<n;i++){
+		c[i*n+j]=a[ind[j]]*(1/b[i]);
 	}
 }

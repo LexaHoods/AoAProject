@@ -1,6 +1,6 @@
-CC = icc
+CC = gcc
 CFLAGS= -g3
-OFLAGS= -mavx2 -xHOST  -qopenmp 
+OFLAGS= -mavx2 -march=native -fopenmp 
 
 
 baseline:
