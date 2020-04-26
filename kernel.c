@@ -70,11 +70,11 @@ void opt_intrinsic(unsigned n, double *restrict  a, unsigned *restrict ind, doub
 	__m128i idx = _mm_setzero_si128();
 	__m256d ymm0 = _mm256_setzero_pd();
 
-	for(j=0;j<(n & ~0x3);j+=4){
+	for(j=0;j<n;j+=4){
 		idx = _mm_load_si128 ((__m128i const *)(ind+j));
 		// idx = _mm_setr_epi32(ind[j],ind[j+1],ind[j+2],ind[j+3]);
 		ymm0 = _mm256_i32gather_pd(a,idx ,8);
-		for(i=0;i<n;i+=4){
+		for(i=0;i<(n & ~0x3);i+=4){
 			c[i*n+j]=ymm0[0]/b[i];
 			c[(i+1)*n+(j+1)]=ymm0[1]*(1/b[i+1]);
 			c[(i+2)*n+(j+2)]=ymm0[2]*(1/b[i+2]);
@@ -93,12 +93,12 @@ void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *r
 	__m128i idx ;
 	__m256d ymm0;
 	#pragma omp parallel for shared(ymm0) private(i,j)
-	for(j=0;j<(n & ~0x3);j+=4){
+	for(j=0;j<n;j+=4){
 		idx = _mm_load_si128 ((__m128i const *)(ind+j));
 		// idx = _mm_setr_epi32(ind[j],ind[j+1],ind[j+2],ind[j+3]);
 		ymm0 = _mm256_i32gather_pd(a,idx ,8);
 		#pragma omp simd
-		for(i=0;i<n;i+=4){
+		for(i=0;i<(n & ~0x3);i+=4){
 			c[i*n+j]=ymm0[0]/b[i];
 			c[(i+1)*n+(j+1)]=ymm0[1]*(1/b[i+1]);
 			c[(i+2)*n+(j+2)]=ymm0[2]*(1/b[i+2]);
