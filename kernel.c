@@ -105,7 +105,7 @@ void opt_opmp(unsigned n, double *restrict  a, unsigned *restrict ind, double *r
 			c[(i+3)*n+(j+3)]=ymm0[3]*(1/b[i+3]);
 		}
 	}
-	#pragma omp parallel for shared (a)
+
 	for(;i<n;i++){
 		c[i*n+j]=a[ind[j]]*(1/b[i]);
 	}
